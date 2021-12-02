@@ -8,7 +8,18 @@ const main = (currentTime) => {
 
 
     console.log('Render');
-    lastRenderTime = currentTime
+    lastRenderTime = currentTime;
+
+    update() // updates all logic for game
+    draw() // draws the updated logic to the screen
 }
 
 window.requestAnimationFrame(main);
+
+const update = () => {
+    
+}
+
+const draw = () => {
+
+}
