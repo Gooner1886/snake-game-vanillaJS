@@ -7,3 +7,7 @@ Aim of the game: Use arrow keys to navigate through the grid and eat as many foo
 Try and record personal high scores and compete with others!
 
 Game screenshots:
+
+![](screenshots/gameStart.png)
+![](screenshots/gameMid.png)
+![](screenshots/gameOver.png)
