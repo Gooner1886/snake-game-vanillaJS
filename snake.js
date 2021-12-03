@@ -29,10 +29,19 @@ export const expandSnake = (RateOfExpansion) => {
   newSegments += RateOfExpansion;
 };
 
-export const onSnake = (foodPosition) => {
-  return snakeBody.some((segment) => {
+export const onSnake = (foodPosition, { ignoreHead = false } = {}) => {
+  return snakeBody.some((segment, index) => {
+    if (ignoreHead && index === 0) return false;
     return equalPositions(segment, foodPosition);
   });
+};
+
+export const getSnakeHead = () => {
+  return snakeBody[0];
+};
+
+export const snakeIntersection = () => {
+  return onSnake(snakeBody[0], { ignoreHead: true });
 };
 
 const equalPositions = (segment, foodPosition) => {
@@ -44,5 +53,5 @@ const addSegments = () => {
     snakeBody.push({ ...snakeBody[snakeBody.length - 1] });
   }
 
-  newSegments = 0
+  newSegments = 0;
 };
