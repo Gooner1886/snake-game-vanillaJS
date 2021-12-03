@@ -4,15 +4,18 @@ import { draw as drawSnake } from "./snake.js";
 import { update as updateFood, draw as drawFood } from "./food.js"
 import { getSnakeHead, snakeIntersection } from "./snake.js";
 import { outsideGrid } from "./grid.js";
+import { snakeBody } from "./snake.js"
 
 const gameBoard = document.getElementById('board')
 
 let lastRenderTime = 0;
 let gameOver = false;
+
 const main = (currentTime) => {
 
   if(gameOver) {
-    if(confirm('You lost. Press OK to restart')) {
+    
+    if(confirm(`You lost. Your score: ${snakeBody.length - 1}. Press OK to restart.`)) {
       window.location = '/'
     }
     return
@@ -32,6 +35,7 @@ const main = (currentTime) => {
 window.requestAnimationFrame(main);
 
 const update = () => {
+    // document.getElementById('score-status').innerHTML(`Snake length: ${snakeBody.length - 1}`)
     updateSnake()
     updateFood()
     checkDeath()

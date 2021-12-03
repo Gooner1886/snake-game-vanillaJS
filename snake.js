@@ -1,8 +1,9 @@
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_SPEED = 3;
-const snakeBody = [{ x: 11, y: 11 }];
+export let SNAKE_SPEED = 4;
+export const snakeBody = [{ x: 11, y: 11 }];
 let newSegments = 0;
+let instructionText = document.getElementById('instructions')
 
 export const update = () => {
   addSegments();
@@ -13,6 +14,7 @@ export const update = () => {
 
   snakeBody[0].x += inputDirection.x;
   snakeBody[0].y += inputDirection.y;
+  
 };
 
 export const draw = (gameBoard) => {
@@ -27,6 +29,11 @@ export const draw = (gameBoard) => {
 
 export const expandSnake = (RateOfExpansion) => {
   newSegments += RateOfExpansion;
+  if(SNAKE_SPEED < 15) {
+    SNAKE_SPEED += 0.5
+  }
+  console.log(SNAKE_SPEED);
+  instructionText.innerHTML = instructionText.innerHTML.replace(`${snakeBody.length - 1}`, `${snakeBody.length}`)
 };
 
 export const onSnake = (foodPosition, { ignoreHead = false } = {}) => {
