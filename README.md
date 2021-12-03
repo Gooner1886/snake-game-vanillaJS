@@ -9,5 +9,10 @@ Try and record personal high scores and compete with others!
 Game screenshots:
 
 ![](screenshots/gameStart.png)
+<br></br>
 ![](screenshots/gameMid.png)
+<br></br>
 ![](screenshots/gameOver.png)
+<br></br>
+
+
