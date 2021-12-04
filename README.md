@@ -6,6 +6,8 @@ Aim of the game: Use arrow keys to navigate through the grid and eat as many foo
 
 Try and record personal high scores and compete with others!
 
+Site deployed on: https://snake-vanillajs.netlify.app/
+
 Game screenshots:
 
 ![](screenshots/gameStart.png)
@@ -14,5 +16,6 @@ Game screenshots:
 <br></br>
 ![](screenshots/gameOver.png)
 <br></br>
+
 
 
